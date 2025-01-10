@@ -13,10 +13,38 @@
         
         .announcement-bar {
             background: linear-gradient(90deg, #2563eb, #3b82f6, #2563eb);
+            box-shadow: 4px 4px 4px rgba(248, 248, 248, 0.8);
+        }
+        .logo1212{
+            font-size: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            
         }
         
         .nav-bg {
             background-color: #ffffff;
+        }
+        .nav-bg a {
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        letter-spacing: 1px;
+        transition: color 0.3s ease-in-out;
+        }
+
+        .nav-bg a:hover {
+        color: #25eb7e;
+        text-decoration: underline;
+         }
+
+        .nav-bg a:focus {
+        outline: none;
+        }
+        .nav-bg .sign-up-button {
+        background-color: #2563eb;
+        color: white;
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
         }
         
         .search-bg {
@@ -166,10 +194,12 @@
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo -->
+                    <div class="logo1212">
                     <a href="/" class="flex items-center space-x-2 text-2xl font-bold">
                         <img src="media.png" alt="Bandipur House Logo" class="h-8 w-8">
                         <span class="text-black">Bandipur House</span>
                     </a>
+                </div>
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="/" class="text-black hover:text-white/80 transition-colors duration-200 text-sm uppercase">Home</a>
                         <a href="/clubs" class="text-black hover:text-white/80 transition-colors duration-200 text-sm uppercase">Clubs</a>
