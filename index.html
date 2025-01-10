@@ -172,6 +172,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: opacity 0.3s, transform 0.3s;
             transform: translateY(20px);
+            margin-bottom: 20%;
         }
 
         .scroll-to-top.visible {
@@ -304,7 +305,11 @@ Our elected representatives empower a "harmonized excellence" ecosystem, where s
                     </p>
                 </div>
             </section>
-       
+            <div class="scroll-to-top" onclick="scrollToTop()" id="scrollToTopButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 4l-8 8h16l-8-8zm0 6.83l-6 6v2h12v-2l-6-6z"></path>
+                </svg>
+            </div>
      </main>
 
     <!-- Footer -->
@@ -367,5 +372,29 @@ Our elected representatives empower a "harmonized excellence" ecosystem, where s
             © 2024 Copyright: Web operation and technical Support team
         </div>
     </div>
-</footer></body>
+</footer>
+<script>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
+    }
+    
+    const marquee = document.querySelector('.marquee');
+    marquee.addEventListener('mouseover', () => {
+        marquee.style.animationPlayState = 'paused';
+    });
+    marquee.addEventListener('mouseout', () => {
+        marquee.style.animationPlayState = 'running';
+    });
+    
+    const scrollDownBtn = document.getElementById('scrollDownBtn');
+
+    scrollDownBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+</body>
 </html>
