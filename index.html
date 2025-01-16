@@ -185,6 +185,11 @@
             width: 24px;
             height: 24px;
         }
+        .typewriter-text {
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+        }
         
     </style>
 </head>
@@ -251,7 +256,7 @@
         <div class="absolute inset-0 flex items-center justify-center">
             <div class="container px-4 mx-auto text-center text-white">
                 <h1 class="text-6xl font-extrabold mb-12 mt-24 tracking-wide leading-tight animate-fade-in">
-                    Welcome to <span class="text-blue-400">Bandipur House</span>
+                    Welcome to <div class="text-blue-400 typewriter-text" id="typewriter"></div>
                 </h1>
                 <p class="text-lg font-medium text-gray-200 max-w-lg mx-auto animate-fade-in delay-200">
                     Escape into tranquility and luxury at the heart of nature. Experience Bandipur like never before.
@@ -374,6 +379,44 @@ Our elected representatives empower a "harmonized excellence" ecosystem, where s
     </div>
 </footer>
 <script>
+     /*typewriter*/
+     const messages = [
+            "BANDIPUR HOUSE",
+            "BANDIPUR HOUSE",
+            "BANDIPUR HOUSE",
+            "BANDIPUR HOUSE",
+            "BANDIPUR HOUSE"
+        ];
+
+        let messageIndex = 0;
+        let charIndex = 0;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function type() {
+            if (charIndex < messages[messageIndex].length) {
+                typewriterElement.textContent += messages[messageIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else {
+                setTimeout(erase, 2000);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typewriterElement.textContent = messages[messageIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, 50);
+            } else {
+                messageIndex = (messageIndex + 1) % messages.length;
+                setTimeout(type, 500);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 500);
+        });
+    /*scroll*/
     function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
     }
